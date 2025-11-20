@@ -1,0 +1,16 @@
+{
+    // Code Runner：使用 CMD 编译 + 运行 C 程序
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMapByFileExtension": {
+        ".c": "cmd /c gcc \"$fileName\" -o \"$fileNameWithoutExt.exe\" -Wl,--subsystem,console && \"$fileNameWithoutExt.exe\""
+    },
+
+    // VSCode 终端：默认使用 CMD 且自动切换到 UTF-8，避免中文乱码
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "path": "cmd.exe",
+            "args": ["/K", "chcp 65001"]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}
